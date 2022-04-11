@@ -1,12 +1,7 @@
 import { compare } from "bcrypt"
 import { sign } from "jsonwebtoken"
 import { prisma } from "../../../database/primsaClient"
-
-interface IAuthenticateClient {
-    username: string
-    password: string
-}
-
+import { IAuthenticateClient } from "./authenticate-client.interface"
 export class AuthenticateClientUseCase {
 
     async execute({ password, username }: IAuthenticateClient) {
