@@ -1,11 +1,6 @@
 import { hash } from "bcrypt"
 import { prisma } from "../../../../database/primsaClient"
-
-interface ICreateClient {
-    username: string
-    password: string
-}
-
+import { ICreateClient } from "./create-client.interface"
 export class CreateClientUseCase {
 
     async execute({ password, username }: ICreateClient) {
