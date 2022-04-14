@@ -25,7 +25,7 @@ routes.post('/authenticate/client', authenticateClientController.handle)
 routes.post('/authenticate/deliveryman', authenticateDeliverymanController.handle)
 
 routes.post('/client', createClientController.handle)
-routes.get('/client/deliveries', findAllDeliveriesController.handle)
+routes.get('/client/deliveries', ensureAuthenticatedClient, findAllDeliveriesController.handle)
 
 routes.post('/deliveryman', createDeliverymanController.handle)
 routes.post('/delivery', ensureAuthenticatedClient, createDeliveryController.handle)
